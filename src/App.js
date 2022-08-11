@@ -15,14 +15,16 @@ const App = () => {
   const documentName = ["Doc1", "Doc2", "Doc3"];
 
   const handleClick = (name) => {
-    if (Object.keys(auditData[0]).includes(name))
+    if (Object.keys(auditData.AuditData[0]).includes(name))
       setDisplayData(auditData[0][name]);
     else setDisplayData(docData[0][name]);
   };
 
+  console.log(auditData.AuditData.Audit1);
+
   return (
     <Grid container columnSpacing={2}>
-      <Grid item xs={12}>
+      <Grid item xs={12} border={2}>
         <FormControl xs={{ minwidth: 120 }}>
           <InputLabel>Label</InputLabel>
           <Select
@@ -38,12 +40,12 @@ const App = () => {
       </Grid>
 
       {/* left side */}
-      <Grid item xs={6}>
-        <Grid container>
-          {/* audit names */}
+      <Grid item xs={6} border={2}>
+        <div>
           {(option === 0 || option === 1) && (
             <Grid item xs={6}>
               <Paper elevation={4}>
+                <h4>Audit</h4>
                 {auditNames.map((name) => (
                   <p
                     style={{ cursor: "pointer" }}
@@ -55,18 +57,13 @@ const App = () => {
               </Paper>
             </Grid>
           )}
-        </Grid>
-      </Grid>
+        </div>
 
-      <Grid item xs={6}>
-        <Grid container>{/* empty grid */}</Grid>
-      </Grid>
-
-      <Grid item xs={6}>
-        <Grid container>
+        <div>
           {(option === 0 || option === 2) && (
             <Grid item xs={6}>
               <Paper elevation={4}>
+                <h4>Document</h4>
                 {documentName.map((name) => (
                   <p
                     style={{ cursor: "pointer" }}
@@ -78,19 +75,18 @@ const App = () => {
               </Paper>
             </Grid>
           )}
-        </Grid>
+        </div>
       </Grid>
 
       {/*  */}
-      {displayData.length > 0 && (
-        <Grid item xs={6}>
-          <Paper elevation={4}>
-            <p>id:{displayData.id}</p>
-            <p>name:{displayData.name}</p>
-            <p>comments:{displayData.city}</p>
-          </Paper>
-        </Grid>
-      )}
+
+      <Grid item xs={6} border={2}>
+        <Paper elevation={4}>
+          <p>id:{displayData.id}</p>
+          <p>name:{displayData.name}</p>
+          <p>comments:{displayData.city}</p>
+        </Paper>
+      </Grid>
     </Grid>
   );
 };

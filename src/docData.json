@@ -1,22 +1,22 @@
 {
   "docData": {
-    "Document1": {
+    "Doc1": {
       "id": 23454545,
       "name": "joey",
       "city": "Banglore",
       "comments": "welocme to dev"
     },
 
-    "Document2": {
+    "Doc2": {
       "id": 782436281,
       "name": "joedf",
       "city": "chennai",
       "comments": "welocme to devguru"
     },
 
-    "Document3": {
+    "Doc3": {
       "id": 78243632531,
-      "name": "jolk",
+      "name": "jolks",
       "city": "Banglore",
       "comments": "welocme to devsimplify"
     }
